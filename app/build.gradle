@@ -1,0 +1,97 @@
+//noinspection GradleCompatible
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.3"
+    defaultConfig {
+        multiDexEnabled = true
+        applicationId "com.adc.origamistudios"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            debuggable true
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules_m.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    defaultConfig {
+        multiDexEnabled true
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation('com.crashlytics.sdk.android:crashlytics:2.7.1@aar') {
+        transitive = true;
+    }
+
+    // Android support libraries
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation "com.android.support:support-v4:26.1.0"
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    implementation 'com.android.support:multidex:1.0.3'
+
+
+    // GSON - JSON Parsing
+    implementation 'com.google.code.gson:gson:2.8.2'
+
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // API Implementation - Retrofit2, HTTPClient (OkHttp), gson converter
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+
+    // NoSQL Database - SnappyDB
+    implementation 'com.snappydb:snappydb-lib:0.5.2'
+    implementation 'com.esotericsoftware.kryo:kryo:2.24.0'
+
+    implementation 'me.relex:circleindicator:1.2.1@aar'
+    implementation 'com.romandanylyk:pageindicatorview:0.2.0@aar'
+    implementation 'com.artemzin.rxjava:proguard-rules:1.3.3.0'
+
+    // Glide Imaging Library
+    implementation 'com.github.bumptech.glide:glide:4.3.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
+
+    testImplementation 'junit:junit:4.12'
+}

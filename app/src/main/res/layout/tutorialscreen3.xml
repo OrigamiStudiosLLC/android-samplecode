@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.origamistudios.sample.presentation.guide.screen1"
+    android:background="@drawable/onboarding_3">
+
+    <ImageView
+        android:id="@+id/imglogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/heading1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_des3"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:ems="8"
+        android:maxLines="2"
+        android:text=""
+        android:visibility="gone"
+        android:textAllCaps="true"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_des3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="60dp"
+        android:textSize="14sp" />
+</RelativeLayout>
