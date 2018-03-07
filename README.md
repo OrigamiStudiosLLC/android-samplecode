@@ -1,12 +1,12 @@
 # Android Sample Code
 
-Android sample code is build to start any new app with already configures commonly used libraries and network layer integration.
+Android sample code is build to start any new app with already configured commonly used libraries and network layer integration.
 
 
 ## Step 1
 
 To start new android app just clone the android app skeleton project from following link
-https://github.com/OrigamiStudiosLLC/samplecode-android.git
+https://github.com/OrigamiStudiosLLC/android-samplecode.git
 
 
 ### Base URL
