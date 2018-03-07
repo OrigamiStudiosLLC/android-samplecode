@@ -1,6 +1,6 @@
 # Android Sample Code
 
-Android sample code is build to start any new app with already configures commonly used libraries and network layer integration.
+Android sample code is build to start any new app with already configured commonly used libraries and network layer integration.
 
 
 ## Step 1
